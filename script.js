@@ -145,5 +145,73 @@ $(document).ready(function() {
     var newArr = $ ('ul#dom-list li').toArray();
     $.each(newArr, function(i, val){
         console.log(val.innerHTML);
-    })
+    });
+
+// EFFECTS AND ANIMATION
+$(document).ready(function(){
+    $('#btnFadeOut').click(function(){
+        $('#box').fadeOut(1000, function(){
+            $('#btnFadeOut').text('Its gone!');
+        });
+    });
+
+    $('#btnFadeIn').click(function(){
+        $('#box').fadeIn(1000, function(){
+            $('#btnFadeOut').text('Fade Out');
+        });
+    });
+
+    $('#btnFadeTog').click(function(){
+        $('#box').fadeToggle(1000);
+    });
+
+    $('#btnSlideDown').click(function(){
+        $('#box').slideDown(1000);
+    });
+
+    $('#btnSlideUp').click(function(){
+        $('#box').slideUp(1000);
+    });
+
+    $('#btnSlideTog').click(function(){
+        $('#box').slideToggle(1000);
+    });
+
+    $('#btnStop').click(function(){
+        $('#box').stop();
+    });
+
+    $('#btnMoveRight').click(function(){
+        $('#box2').animate({
+            left: 500,
+            height: '300px',
+            opacity: 0.4
+        });
+    });
+
+    $('#btnMoveLeft').click(function(){
+        $('#box2').animate({
+            left: 0,
+            height: '50px',
+            opacity: 1
+        });
+    });
+
+    $('#btnMoveAround').click(function(){
+        var box = $('#box2');
+        box.animate({
+            left: 300
+        });
+        box.animate({
+            top: 300
+        });
+        box.animate({
+            left: 0
+        });
+        box.animate({
+            top: 0
+        });
+    });
+})
+
 });
